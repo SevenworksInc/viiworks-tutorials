@@ -1,0 +1,105 @@
+/*!
+ * Start Bootstrap - Shop Item HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.affix {
+	width: 292.500px;
+}
+
+@media (min-width: 1200px) {
+	.affix {
+		width: 292.500px;
+	}         
+}
+
+.navbar-custom {
+    background-color: #449d44;
+    border-color: #449d44;
+}
+
+.navbar-custom a {
+	color: #fff !important;
+}
+
+
+#sidebar_affix .nav > li > a {
+	color: #9d9d9d;
+}
+
+#sidebar_affix .nav-pills > li.active > a,
+#sidebar_affix .nav-pills > li.active > a:hover,
+#sidebar_affix .nav-pills > li.active > a:focus {
+    color: #449d44;
+    background-color: transparent;
+	font-weight: 600;
+	border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	border-left: 2px #449d44 solid;
+}
+
+#sidebar_affix .nav > li > a:hover,
+#sidebar_affix .nav > li > a:focus {
+    text-decoration: none;
+	border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+    background-color: #eeeeee;
+	border-left: 1px #449d44 solid;
+    background-color: transparent;
+}
+
+
+.header-image {
+    display: block;
+    width: 100%;
+    text-align: center;
+	background-color: #449d44;
+    /* background: url('../../img/bg_heading.png') no-repeat center center scroll; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+	margin-bottom: 50px
+}
+
+.headline {
+    padding: 120px 0;
+}
+
+.headline h1 {
+    font-size: 100px;
+	color: #fff;
+}
+
+.headline h2 {
+    font-size: 77px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
