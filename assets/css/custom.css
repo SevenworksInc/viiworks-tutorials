@@ -38,6 +38,7 @@ footer {
 
 @media (min-width: 1200px) {
 	.affix {
+		top: 72px;
 		width: 292.500px;
 	}         
 }
@@ -58,7 +59,10 @@ footer {
 
 #sidebar_affix .nav-pills > li.active > a,
 #sidebar_affix .nav-pills > li.active > a:hover,
-#sidebar_affix .nav-pills > li.active > a:focus {
+#sidebar_affix .nav-pills > li.active > a:focus,
+#sidebar_affix .nav-pills > li.active > ul > li.active > a,
+#sidebar_affix .nav-pills > li.active > ul > li.active > a:hover,
+#sidebar_affix .nav-pills > li.active > ul > li.active > a:focus {
     color: #449d44;
     background-color: transparent;
 	font-weight: 600;
@@ -79,6 +83,13 @@ footer {
 	border-left: 1px #449d44 solid;
     background-color: transparent;
 }
+
+#sidebar_affix.affix-top .affix {
+	position: relative !important;
+	top: 0 !important;
+}
+
+
 
 
 .header-image {
