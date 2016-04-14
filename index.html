@@ -93,17 +93,17 @@
 							<li><a href="#mergfls">Merging</a></li>
 							<li><a href="#restfls">Reset</a></li>
 							<li><a href="#clenfls">Clean</a></li>
-							<li><a href="#difffls">Difference</a></li>
+							<!-- <li><a href="#difffls">Difference</a></li> -->
 							<li><a href="#status">Status</a></li>
 							<li><a href="#logsfls">Logs</a></li>
 							<li><a href="#rvrtfls">Revert</a></li>
 						</ul>
 					</li>
-					<li role="presentation"><a href="javascript:;">Team Workflow</a>
+					<li role="presentation"><a href="#teamcollaboration">Team Workflow</a>
 						<ul class="nav nav-sub">
 							<li><a href="javscript:;">Fork Repository</a></li>
 							<li><a href="javscript:;">Share Updates</a></li>
-							<li><a href="javscript:;">Pull Requests</a></li>
+							<li><a href="javscript:;">Pull/Push Requests</a></li>
 						</ul>
 					</li>
 					<li role="presentation"><a href="javascript:;">Jackmedia</a>
@@ -222,7 +222,7 @@
 				
 				<section id="basiccommands">
 					
-					<h1>Basic Git Commands</h1>
+					<h1>Git Commands</h1>
 					<section id="crtrepo">
 						<h2>Setting up a repository</h2>
 						<h4>git init</h4>
@@ -265,7 +265,7 @@
 							<span class="code-sample">&#36; git config user.name &lt;name&gt;</span>
 							</div>
 						</div>
-						<p>Define the author name to be used for all commits in the current repository. Typically, you’ll want to use the --global flag to set configuration options for the current user.</p>
+						<p>Define the author name to be used for all commits in the current repository. Typically, you’ll want to use the <span class="command-line">--global</span> flag to set configuration options for the current user.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -297,7 +297,7 @@
 							<span class="code-sample">&#36; git config --system core.editor &lt;editor&gt;</span>
 							</div>
 						</div>
-						<p>Define the text editor used by commands like git commit for all users on the current machine. The &lt;editor&gt; argument should be the command that launches the desired editor (e.g., vi).</p>
+						<p>Define the text editor used by commands like git commit for all users on the current machine. The <span class="command-line">&lt;editor&gt;</span> argument should be the command that launches the desired editor (e.g., vi).</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -364,14 +364,14 @@
 							<span class="code-sample">&#36; git add &#45;p</span>
 							</div>
 						</div>
-						<p>Begin an interactive staging session that lets you choose portions of a file to add to the next commit. This will present you with a chunk of changes and prompt you for a command. Use <span class="code-sample">y</span> to stage the chunk, <span class="code-sample">n</span> to ignore the chunk, <span class="code-sample">s</span> to split it into smaller chunks, <span class="code-sample">e</span> to manually edit the chunk, and <span class="code-sample">q</span> to exit.</p>
+						<p>Begin an interactive staging session that lets you choose portions of a file to add to the next commit. This will present you with a chunk of changes and prompt you for a command. Use <span class="command-line">y</span> to stage the chunk, <span class="command-line">n</span> to ignore the chunk, <span class="command-line">s</span> to split it into smaller chunks, <span class="command-line">e</span> to manually edit the chunk, and <span class="command-line">q</span> to exit.</p>
 						
 						<h4>Discussion</h4>
-						<p>The <span class="code-sample">git add</span> and <span class="code-sample">git commit</span> commands compose the fundamental Git workflow. These are the two commands that every Git user needs to understand, regardless of their team’s collaboration model. They are the means to record versions of a project into the repository’s history.</p>
+						<p>The <span class="command-line">git add</span> and <span class="command-line">git commit</span> commands compose the fundamental Git workflow. These are the two commands that every Git user needs to understand, regardless of their team’s collaboration model. They are the means to record versions of a project into the repository’s history.</p>
 
-						<p>Developing a project revolves around the basic edit/stage/commit pattern. First, you edit your files in the working directory. When you’re ready to save a copy of the current state of the project, you stage changes with <span class="code-sample">git add</span>. After you’re happy with the staged snapshot, you commit it to the project history with <span class="code-sample">git commit</span>.</p>
+						<p>Developing a project revolves around the basic edit/stage/commit pattern. First, you edit your files in the working directory. When you’re ready to save a copy of the current state of the project, you stage changes with <span class="command-line">git add</span>. After you’re happy with the staged snapshot, you commit it to the project history with <span class="command-line">git commit</span>.</p>
 						
-						<p>The <span class="code-sample">git add</span> command should not be confused with <span class="code-sample">svn add</span>, which adds a file to the repository. Instead, git add works on the more abstract level of changes. This means that <span class="code-sample">git add</span> needs to be called every time you alter a file, whereas <span class="code-sample">svn add</span> only needs to be called once for each file. It may sound redundant, but this workflow makes it much easier to keep a project organized.</p>
+						<p>The <span class="command-line">git add</span> command should not be confused with <span class="command-line">svn add</span>, which adds a file to the repository. Instead, git add works on the more abstract level of changes. This means that <span class="command-line">git add</span> needs to be called every time you alter a file, whereas <span class="command-line">svn add</span> only needs to be called once for each file. It may sound redundant, but this workflow makes it much easier to keep a project organized.</p>
 
 						<h4>The Staging Area</h4>
 						<p>The staging area is one of Git's more unique features, and it can take some time to wrap your head around it if you’re coming from an SVN (or even a Mercurial) background. It helps to think of it as a buffer between the working directory and the project history.</p>
@@ -388,7 +388,7 @@
 							<span class="code-sample">&#36; git commit</span>
 							</div>
 						</div>
-						<p>Once you’ve got your project up-and-running, new files can be added by passing the path to <span class="code-sample">git add</span>:</p>
+						<p>Once you’ve got your project up-and-running, new files can be added by passing the path to <span class="command-line">git add</span>:</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -425,7 +425,7 @@
 							<span class="code-sample">&#36; git remote add &lt;name&gt; &lt;url&gt;</span>
 							</div>
 						</div>
-						<p>Create a new connection to a remote repository. After adding a remote, you’ll be able to use &lt;name&gt; as a convenient shortcut for &lt;url&gt; in other Git commands.</p>
+						<p>Create a new connection to a remote repository. After adding a remote, you’ll be able to use <span class="command-line">&lt;name&gt;</spam> as a convenient shortcut for &lt;url&gt; in other Git commands.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -433,7 +433,7 @@
 							<span class="code-sample">&#36; git remote rm &lt;name&gt;</span>
 							</div>
 						</div>
-						<p>Remove the connection to the remote repository called &lt;name&gt;.</p>
+						<p>Remove the connection to the remote repository called  <span class="command-line">&lt;name&gt;</span>.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -441,7 +441,7 @@
 							<span class="code-sample">&#36; git remote rename &lt;old-name&gt; &lt;new-name&gt;</span>
 							</div>
 						</div>
-						<p>Rename a remote connection from &lt;old-name&gt; to &lt;new-name&gt;.</p>
+						<p>Rename a remote connection from <span class="command-line">&lt;old-name&gt;</span> to <span class="command-line">&lt;new-name&gt;</span>.</p>
 					</section>
 					<section id="ftchfls">
 						<h2>git fetch</h2>
@@ -465,7 +465,7 @@
 					</section>
 					<section id="plngfls">
 						<h2>git pull</h2>
-						<p>Merging upstream changes into your local repository is a common task in Git-based collaboration workflows. We already know how to do this with git fetch followed by git merge, but git pull rolls this into a single command.</p>
+						<p>Merging upstream changes into your local repository is a common task in Git-based collaboration workflows. We already know how to do this with git fetch followed by <span class="command-line">git merge</span>, but <span class="command-line">git pull</span> rolls this into a single command.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -473,7 +473,7 @@
 							<span class="code-sample">&#36; git pull &lt;remote&gt;</span>
 							</div>
 						</div>
-						<p>Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy. This is the same as <br>git fetch &lt;remote&gt; followed by <br>git merge origin/&lt;current-branch&gt;.</p>
+						<p>Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy. This is the same as <br><span class="command-line">git fetch &lt;remote&gt;</span> followed by <br><span class="command-line">git merge origin/&lt;current-branch&gt;</span>.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -481,7 +481,7 @@
 							<span class="code-sample">&#36; git pull --rebase &lt;remote&gt;</span>
 							</div>
 						</div>
-						<p>Same as the above command, but instead of using git merge to integrate the remote branch with the local one, use git rebase.</p>
+						<p>Same as the above command, but instead of using git merge to integrate the remote branch with the local one, use <span class="command-line">git rebase</span>.</p>
 					</section>
 					<section id="phngfls">
 						<h2>git push</h2>
@@ -493,7 +493,7 @@
 							<span class="code-sample">&#36; git push &lt;remote&gt;</span>
 							</div>
 						</div>
-						<p>Push the specified branch to &lt;remote&gt;, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. To prevent you from overwriting commits, Git won’t let you push when it results in a non-fast-forward merge in the destination repository.</p>
+						<p>Push the specified branch to <span class="command-line">&lt;remote&gt;</span>, along with all of the necessary commits and internal objects. This creates a local branch in the destination repository. To prevent you from overwriting commits, Git won’t let you push when it results in a non-fast-forward merge in the destination repository.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -501,7 +501,7 @@
 							<span class="code-sample">&#36; git push &lt;remote&gt; --force</span>
 							</div>
 						</div>
-						<p>Same as the above command, but force the push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re absolutely sure you know what you’re doing.</p>
+						<p>Same as the above command, but force the push even if it results in a non-fast-forward merge. Do not use the <span class="command-line">--force</span> flag unless you’re absolutely sure you know what you’re doing.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -517,11 +517,11 @@
 							<span class="code-sample">&#36; git push &lt;remote&gt; --tags</span>
 							</div>
 						</div>
-						<p>Tags are not automatically pushed when you push a branch or use the --all option. The --tags flag sends all of your local tags to the remote repository.</p>
+						<p>Tags are not automatically pushed when you push a branch or use the <span class="command-line">--all</span> option. The <span class="command-line">--tags</span> flag sends all of your local tags to the remote repository.</p>
 					</section>
 					<section id="cmmtfls">
 						<h2>git commit</h2>
-						<p>The git commit command commits the staged snapshot to the project history. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicity ask it to. Along with <span class="code-sample">git add</span>, this is one of the most important Git commands.</p>
+						<p>The git commit command commits the staged snapshot to the project history. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicity ask it to. Along with <span class="command-line">git add</span>, this is one of the most important Git commands.</p>
 
 						<p>While they share the same name, this command is nothing like svn commit. Snapshots are committed to the local repository, and this requires absolutely no interaction with other Git repositories.</p>
 						<div class="panel panel-success">
@@ -530,9 +530,9 @@
 							<span class="code-sample">&#36; git commit</span>
 							</div>
 						</div>
-						<p>Commit the staged snapshot. This will launch a text editor prompting you for a commit message. After you’ve entered a message, save the file and close the editor to create the actual commit. <span class="code-sample">git commit -m &quot;&lt;message&gt;&quot;</span></p>
+						<p>Commit the staged snapshot. This will launch a text editor prompting you for a commit message. After you’ve entered a message, save the file and close the editor to create the actual commit. <span class="command-line">git commit -m &quot;&lt;message&gt;&quot;</span></p>
 
-						<p>Commit the staged snapshot, but instead of launching a text editor, use &lt;message&gt; as the commit message.</p>
+						<p>Commit the staged snapshot, but instead of launching a text editor, use <span class="command-line">&lt;message&gt;</span> as the commit message.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -540,7 +540,7 @@
 							<span class="code-sample">&#36; git commit &#45;a</span>
 							</div>
 						</div>
-						<p>Commit a snapshot of all changes in the working directory. This only includes modifications to tracked files (those that have been added with git add at some point in their history).</p>
+						<p>Commit a snapshot of all changes in the working directory. This only includes modifications to tracked files (those that have been added with <span class="command-line">git add</span> at some point in their history).</p>
 					</section>
 					<section id="rbasfls">
 						<h2>git rebase</h2>
@@ -552,7 +552,7 @@
 							<span class="code-sample">&#36; git rebase &lt;base&gt;</span>
 							</div>
 						</div>
-						<p>Rebase the current branch onto &lt;base&gt;, which can be any kind of commit reference (an ID, a branch name, a tag, or a relative reference to HEAD).</p>
+						<p>Rebase the current branch onto <span class="command-line">&lt;base&gt;</span>, which can be any kind of commit reference (an ID, a branch name, a tag, or a relative reference to HEAD).</p>
 					</section>
 					<section id="chkoutf">
 						<h2>git checkout</h2>
@@ -574,7 +574,7 @@
 							<span class="code-sample">&#36; git checkout &lt;commit&gt; &lt;file&gt;</span>
 							</div>
 						</div>
-						<p>Check out a previous version of a file. This turns the &lt;file&gt; that resides in the working directory into an exact copy of the one from &lt;commit&gt; and adds it to the staging area.</p>
+						<p>Check out a previous version of a file. This turns the <span class="command-line">&lt;file&gt;</span> that resides in the working directory into an exact copy of the one from <span class="command-line">&lt;commit&gt;</span> and adds it to the staging area.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -582,7 +582,7 @@
 							<span class="code-sample">&#36; git checkout &lt;commit&gt;</span>
 							</div>
 						</div>
-						<p>Update all files in the working directory to match the specified commit. You can use either a commit hash or a tag as the &lt;commit&gt; argument. This will put you in a detached HEAD state.</p>
+						<p>Update all files in the working directory to match the specified commit. You can use either a commit hash or a tag as the <span class="command-line">&lt;commit&gt;</span> argument. This will put you in a detached HEAD state.</p>
 					</section>
 					<section id="brncfls">
 						<h2>git branch</h2>
@@ -602,7 +602,7 @@
 							<span class="code-sample">&#36; git branch &lt;branch&gt;</span>
 							</div>
 						</div>
-						<p>Create a new branch called &lt;branch&gt;. This does not check out the new branch.</p>
+						<p>Create a new branch called <span class="command-line">&lt;branch&gt;</span>. This does not check out the new branch.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -626,7 +626,7 @@
 							<span class="code-sample">&#36; git branch -m &lt;branch&gt;</span>
 							</div>
 						</div>
-						<p>Rename the current branch to &lt;branch&gt;.</p>
+						<p>Rename the current branch to <span class="command-line">&lt;branch&gt;</span>.</p>
 					</section>
 					<section id="mergfls">
 						<h2>git merge</h2>
@@ -650,7 +650,7 @@
 					</section>
 					<section id="restfls">
 						<h2>git reset</h2>
-						<p>If git revert is a “safe” way to undo changes, you can think of git reset as the dangerous method. When you undo with git reset(and the commits are no longer referenced by any ref or the reflog), there is no way to retrieve the original copy—it is a permanent undo. Care must be taken when using this tool, as it’s one of the only Git commands that has the potential to lose your work.</p>
+						<p>If <span class="command-line">git revert</span> is a “safe” way to undo changes, you can think of git reset as the dangerous method. When you undo with git reset(and the commits are no longer referenced by any ref or the reflog), there is no way to retrieve the original copy—it is a permanent undo. Care must be taken when using this tool, as it’s one of the only Git commands that has the potential to lose your work.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -674,7 +674,7 @@
 							<span class="code-sample">&#36; git reset --hard</span>
 							</div>
 						</div>
-						<p>Reset the staging area and the working directory to match the most recent commit. In addition to unstaging changes, the --hard flag tells Git to overwrite all changes in the working directory, too. Put another way: this obliterates all uncommitted changes, so make sure you really want to throw away your local developments before using it.</p>
+						<p>Reset the staging area and the working directory to match the most recent commit. In addition to unstaging changes, the <span class="command-line">--hard</span> flag tells Git to overwrite all changes in the working directory, too. Put another way: this obliterates all uncommitted changes, so make sure you really want to throw away your local developments before using it.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -682,7 +682,7 @@
 							<span class="code-sample">&#36; git reset &lt;commit&gt;</span>
 							</div>
 						</div>
-						<p>Move the current branch tip backward to &lt;commit&gt;, reset the staging area to match, but leave the working directory alone. All changes made since &lt;commit&gt; will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.</p>
+						<p>Move the current branch tip backward to <span class="command-line">&lt;commit&gt;</span>, reset the staging area to match, but leave the working directory alone. All changes made since <span class="command-line">&lt;commit&gt;</span> will reside in the working directory, which lets you re-commit the project history using cleaner, more atomic snapshots.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -690,11 +690,11 @@
 							<span class="code-sample">&#36; git reset --hard &lt;commit&gt;</span>
 							</div>
 						</div>
-						<p>Move the current branch tip backward to &lt;commit&gt; and reset both the staging area and the working directory to match. This obliterates not only the uncommitted changes, but all commits after &lt;commit&gt;, as well.</p>
+						<p>Move the current branch tip backward to <span class="command-line">&lt;commit&gt;</span> and reset both the staging area and the working directory to match. This obliterates not only the uncommitted changes, but all commits after <span class="command-line">&lt;commit&gt;</span>, as well.</p>
 					</section>
 					<section id="clenfls">
 						<h2>git clean</h2>
-						<p>The git clean command removes untracked files from your working directory. This is really more of a convenience command, since it’s trivial to see which files are untracked with git status and remove them manually. Like an ordinary rm command, git clean is not undoable, so make sure you really want to delete the untracked files before you run it.</p>
+						<p>The <span class="command-line">git clean</span> command removes untracked files from your working directory. This is really more of a convenience command, since it’s trivial to see which files are untracked with git status and remove them manually. Like an ordinary rm command, git clean is not undoable, so make sure you really want to delete the untracked files before you run it.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -702,7 +702,7 @@
 							<span class="code-sample">&#36; git clean -n</span>
 							</div>
 						</div>
-						<p>Perform a “dry run” of git clean. This will show you which files are going to be removed without actually doing it.</p>
+						<p>Perform a “dry run” of <span class="command-line">git clean</span>. This will show you which files are going to be removed without actually doing it.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -710,7 +710,7 @@
 							<span class="code-sample">&#36; git clean -f</span>
 							</div>
 						</div>
-						<p>Remove untracked files from the current directory. The -f (force) flag is required unless the clean.requireForce configuration option is set to false (it's true by default). This will not remove untracked folders or files specified by .gitignore.</p>
+						<p>Remove untracked files from the current directory. The <span class="command-line">-f</span> (force) flag is required unless the clean.requireForce configuration option is set to false (it's true by default). This will not remove untracked folders or files specified by <span class="command-line">.gitignore</span>.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -736,12 +736,12 @@
 						</div>
 						<p>Remove untracked files from the current directory as well as any files that Git usually ignores.</p>
 					</section>
-					<section id="difffls">
+					<!-- <section id="difffls">
 						<h2>Difference</h2>
-					</section>
+					</section> -->
 					<section id="status">
 						<h2>git status</h2>
-						<p>The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log.</p>
+						<p>The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use <span class="command-line">git log</span>.</p>
 						
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -753,7 +753,7 @@
 					</section>
 					<section id="logsfls">
 						<h2>git log</h2>
-						<p>The git log command displays committed snapshots. It lets you list the project history, filter it, and search for specific changes. While git status lets you inspect the working directory and the staging area, git log only operates on the committed history.</p>
+						<p>The git log command displays committed snapshots. It lets you list the project history, filter it, and search for specific changes. While git status lets you inspect the working directory and the staging area, <span class="command-line">git log</span> only operates on the committed history.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -769,7 +769,7 @@
 							<span class="code-sample">&#36; git log -n &lt;limit&gt;</span>
 							</div>
 						</div>
-						<p>Limit the number of commits by &lt;limit&gt;. For example, git log -n 3 will display only 3 commits.</p>
+						<p>Limit the number of commits by <span class="command-line">&lt;limit&gt;</span>. For example, <span class="command-line">git log -n 3</span> will display only 3 commits.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -801,7 +801,7 @@
 							<span class="code-sample">&#36; git log --author="&lt;pattern&gt;</span>
 							</div>
 						</div>
-						<p>Search for commits by a particular author. The <pattern> argument can be a plain string or a regular expression.</p>
+						<p>Search for commits by a particular author. The <span class="command-line">&lt;pattern&gt;</span> argument can be a plain string or a regular expression.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -809,7 +809,7 @@
 							<span class="code-sample">&#36; git log --grep="&lt;pattern&gt;</span>
 							</div>
 						</div>
-						<p>Search for commits with a commit message that matches <pattern>, which can be a plain string or a regular expression.</p>
+						<p>Search for commits with a commit message that matches <span class="command-line">&lt;pattern&gt;</span>, which can be a plain string or a regular expression.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -817,7 +817,7 @@
 							<span class="code-sample">&#36; git log &lt;since&gt;..&lt;until&gt;</span>
 							</div>
 						</div>
-						<p>Show only commits that occur between &lt;since&gt; and &lt;until&gt;. Both arguments can be either a commit ID, a branch name, HEAD, or any other kind of revision reference.</p>
+						<p>Show only commits that occur between <span class="command-line">&lt;since&gt;</span> and <span class="command-line">&lt;until&gt;</span>. Both arguments can be either a commit ID, a branch name, HEAD, or any other kind of revision reference.</p>
 
 						<div class="panel panel-success">
 							<div class="panel-heading">EXAMPLE</div>
@@ -833,7 +833,7 @@
 							<span class="code-sample">&#36; git log --graph --decorate --oneline</span>
 							</div>
 						</div>
-						<p>A few useful options to consider. The —graph flag that will draw a text based graph of the commits on the left hand side of the commit messages. —decorate adds the names of branches or tags of the commits that are shown. —oneline shows the commit information on a single line making it easier to browse through commits at-a-glance.</p>
+						<p>A few useful options to consider. The <span class="command-line">—graph</span> flag that will draw a text based graph of the commits on the left hand side of the commit messages. <span class="command-line">—decorate</span> adds the names of branches or tags of the commits that are shown. <span class="command-line">—oneline</span> shows the commit information on a single line making it easier to browse through commits at-a-glance.</p>
 					</section>
 					<section id="rvrtfls">
 						<h2>git revert</h2>
@@ -845,7 +845,125 @@
 							<span class="code-sample">&#36; git revert &lt;commit&gt;</span>
 							</div>
 						</div>
-						<p>Generate a new commit that undoes all of the changes introduced in &lt;commit&gt;, then apply it to the current branch.</p>
+						<p>Generate a new commit that undoes all of the changes introduced in <span class="command-line">&lt;commit&gt;</span>, then apply it to the current branch.</p>
+					</section>
+				</section>
+				
+				<section id="teamcollaboration">
+					<h1>Team Collaboration</h1>
+					<p>Five basic steps to collaborate with team</p>
+					<ol>
+						<li>Fork Main Repository</li>
+						<li>Clone Forked Repository</li>
+						<li>Keep your Forked up-to-date</li>
+						<li>Push Updates</li>
+						<li>Pull Request</li>
+					</ol>
+					<section id="wvc">
+						<h2>Forking of Respository</h2>
+						<p>A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.</p>
+						<p>Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.</p>
+						<img src="img/guides/forking.png" class="img-responsive" />
+						<h4>Propose changes to someone else's project</h4>
+						<p>A great example of using forks to propose changes is for bug fixes. Rather than logging an issue for a bug you've found, you can:</p>
+						<ol>
+							<li>Fork the repository.</li>
+							<li>Make the fix.</li>
+							<li>Submit a pull request to the project owner.</li>
+						</ol>
+						
+						<h4>Keep your fork synced</h4>
+						<p>You might fork a project in order to propose changes to the upstream, or original, repository. In this case, it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. You can practice setting the upstream repository using the same octocat/Spoon-Knife repository you just forked!</p>
+						<h5>Step 1: Set Up Git</h5>
+						<p>If you haven't yet, you should first set up Git. Don't forget to set up authentication to GitHub from Git as well.</p>
+						<h5>Step 2: Create a local clone of your fork</h5>
+						<p>Right now, you have a fork of the Spoon-Knife repository, but you don't have the files in that repository on your computer. Let's create a clone of your fork locally on your computer.</p>
+						<ol>
+							<li>On GitHub, navigate to your fork of the Spoon-Knife repository.</li>
+							<li>Clone URL buttonUnder your repository name, click  to copy the clone URL for the repository.</li>
+							<li>Open Git Bash.</li>
+							<li>
+								Type git clone, and then paste the URL you copied in Step 2. It will look like this, with your GitHub username instead of YOUR-USERNAME:<br/>
+								<span class="command-black code-sample clearfix">
+									$ git clone https://github.com/YOUR-USERNAME/Your-Repository
+								</span>
+							</li>
+							<li>Press Enter. Your local clone will be created.
+								<span class="command-black code-sample clearfix">
+									$ git clone https://github.com/YOUR-USERNAME/Your-Repository<br/>
+									Cloning into `Spoon-Knife`...<br/>
+									remote: Counting objects: 10, done.<br/>
+									remote: Compressing objects: 100% (8/8), done.<br/>
+									remove: Total 10 (delta 1), reused 10 (delta 1)<br/>
+									Unpacking objects: 100% (10/10), done.
+								</span>
+							</li>
+						</ol>
+						<p>Now, you have a local copy of your fork of the Spoon-Knife repository!</p>
+						
+						<h5>Step 3: Configure Git to sync your fork with the original Spoon-Knife repository</h5>
+						<p>When you fork a project in order to propose changes to the original repository, you can configure Git to pull changes from the original, or upstream, repository into the local clone of your fork.</p>
+						<ol>
+							<li>On GitHub, navigate to the octocat/Spoon-Knife repository.</li>
+							<li>Under your repository name, click  to copy the clone URL for the repository.</li>
+							<li>Open Git Bash.</li>
+							<li>
+								Change directories to the location of the fork you cloned in Step 2: Create a local clone of your fork.
+								<ul>
+									<li>To go to your home directory, type just cd with no other text.</li>
+									<li>To list the files and folders in your current directory, type ls.</li>
+									<li>To go into one of your listed directories, type cd your_listed_directory.</li>
+									<li>To go up one directory, type cd ...</li>
+								</ul>
+							</li>
+							<li>
+								Type git remote -v and press Enter. You'll see the current configured remote repository for your fork.
+								<span class="command-black code-sample clearfix">
+									git remote -v<br/>
+									origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)<br/>
+									origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)<br/>
+								</span>
+							</li>
+							<li>
+								Type git remote add upstream, and then paste the URL you copied in Step 2 and press Enter. It will look like this:
+								<span class="command-black code-sample clearfix">
+									$ git remote add upstream https://github.com/octocat/Spoon-Knife.git
+								</span>
+							</li>
+							<li>
+								To verify the new upstream repository you've specified for your fork, type git remote -v again. You should see the URL for your fork as origin, and the URL for the original repository as upstream.
+								<span class="command-black code-sample clearfix">
+									git remote -v<br/>
+									origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)<br/>
+									origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)<br/>
+									upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)<br/>
+									upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+								</span>
+							</li>
+						</ol>
+						<p>Now, you can keep your fork synced with the upstream repository with a few Git commands. For more information, see "Syncing a fork."</p>
+					</section>
+					
+					<section id="wvc">
+						<h2>Sharing of Updates</h2>
+						<p></p>
+					</section>
+					
+					<section id="wvc">
+						<h2>Pull Requests</h2>
+						<p>Pull requests are a feature that makes it easier for developers to collaborate using Github. They provide a user-friendly web interface for discussing proposed changes before integrating them into the official project.</p>
+						<img src="img/guides/pull_request.png" class="img-responsive" />
+						<p>In their simplest form, pull requests are a mechanism for a developer to notify team members that they have completed a feature. Once their feature branch is ready, the developer files a pull request via their Bitbucket account. This lets everybody involved know that they need to review the code and merge it into the master branch.</p>
+						<h3>How it works</h3>
+						<p>Pull requests can be used in conjunction with the Feature Branch Workflow, the Gitflow Workflow, or the Forking Workflow. But a pull request requires either two distinct branches or two distinct repositories, so they will not work with the Centralized Workflow. Using pull requests with each of these workflows is slightly different, but the general process is as follows:</p>
+						
+						<ol>
+							<li>A developer creates the feature in a dedicated branch in their local repo.</li>
+							<li>The developer pushes the branch to a public Bitbucket repository.</li>
+							<li>The developer files a pull request via Bitbucket.</li>
+							<li>The rest of the team reviews the code, discusses it, and alters it.</li>
+							<li>The project maintainer merges the feature into the official repository and closes the pull request.</li>
+						</ol>
 					</section>
 				</section>
             </div>

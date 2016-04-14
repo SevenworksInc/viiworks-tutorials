@@ -145,3 +145,16 @@ ul.nav.nav-sub > li > a {
 	padding: 0 15px 0 35px;
 	font-size: 13px;
 }
+
+span.code-sample {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 800;
+}
+
+span.command-line {
+	font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+    padding: 0 5px;
+    background-color: #dff0d8;
+}
+
