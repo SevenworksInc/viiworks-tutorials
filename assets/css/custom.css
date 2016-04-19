@@ -158,3 +158,17 @@ span.command-line {
     background-color: #dff0d8;
 }
 
+div.black-area {
+	border: 2px solid #ddd;
+    background-color: #333;
+    color: #fff;
+	padding: 20px;
+    font-size: .8em;
+	line-height: 14px;
+}
+
+div.black-area .command-green {
+    color: #63E463;
+	font-family: "Courier New", Courier, monospace;
+    font-weight: 800;
+}

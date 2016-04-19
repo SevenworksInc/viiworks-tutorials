@@ -101,9 +101,9 @@
 					</li>
 					<li role="presentation"><a href="#teamcollaboration">Team Workflow</a>
 						<ul class="nav nav-sub">
-							<li><a href="javscript:;">Fork Repository</a></li>
-							<li><a href="javscript:;">Share Updates</a></li>
-							<li><a href="javscript:;">Pull/Push Requests</a></li>
+							<li><a href="#fork">Fork Repository</a></li>
+							<li><a href="#syncfork">Syncing a fork</a></li>
+							<li><a href="#pullreq">Pull Requests</a></li>
 						</ul>
 					</li>
 					<li role="presentation"><a href="javascript:;">Jackmedia</a>
@@ -859,7 +859,7 @@
 						<li>Push Updates</li>
 						<li>Pull Request</li>
 					</ol>
-					<section id="wvc">
+					<section id="fork">
 						<h2>Forking of Respository</h2>
 						<p>A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.</p>
 						<p>Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.</p>
@@ -873,38 +873,42 @@
 						</ol>
 						
 						<h4>Keep your fork synced</h4>
-						<p>You might fork a project in order to propose changes to the upstream, or original, repository. In this case, it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. You can practice setting the upstream repository using the same octocat/Spoon-Knife repository you just forked!</p>
+						<p>You might fork a project in order to propose changes to the upstream, or original, repository. In this case, it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. You can practice setting the upstream repository using the same octocat/Your-Repository repository you just forked!</p>
 						<h5>Step 1: Set Up Git</h5>
 						<p>If you haven't yet, you should first set up Git. Don't forget to set up authentication to GitHub from Git as well.</p>
 						<h5>Step 2: Create a local clone of your fork</h5>
-						<p>Right now, you have a fork of the Spoon-Knife repository, but you don't have the files in that repository on your computer. Let's create a clone of your fork locally on your computer.</p>
+						<p>Right now, you have a fork of the Your-Repository repository, but you don't have the files in that repository on your computer. Let's create a clone of your fork locally on your computer.</p>
 						<ol>
-							<li>On GitHub, navigate to your fork of the Spoon-Knife repository.</li>
+							<li>On GitHub, navigate to your fork of the Your-Repository repository.</li>
 							<li>Clone URL buttonUnder your repository name, click  to copy the clone URL for the repository.</li>
 							<li>Open Git Bash.</li>
 							<li>
 								Type git clone, and then paste the URL you copied in Step 2. It will look like this, with your GitHub username instead of YOUR-USERNAME:<br/>
-								<span class="command-black code-sample clearfix">
-									$ git clone https://github.com/YOUR-USERNAME/Your-Repository
-								</span>
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git clone https://github.com/YOUR-USERNAME/Your-Repository
+									</span>
+								</div>
 							</li>
 							<li>Press Enter. Your local clone will be created.
-								<span class="command-black code-sample clearfix">
-									$ git clone https://github.com/YOUR-USERNAME/Your-Repository<br/>
-									Cloning into `Spoon-Knife`...<br/>
-									remote: Counting objects: 10, done.<br/>
-									remote: Compressing objects: 100% (8/8), done.<br/>
-									remove: Total 10 (delta 1), reused 10 (delta 1)<br/>
-									Unpacking objects: 100% (10/10), done.
-								</span>
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git clone https://github.com/YOUR-USERNAME/Your-Repository<br/>
+										<span class="command-green">Cloning into `Your-Repository`...</span><br/>
+										<span class="command-green">remote: Counting objects: 10, done.</span><br/>
+										<span class="command-green">remote: Compressing objects: 100% (8/8), done.</span><br/>
+										<span class="command-green">remove: Total 10 (delta 1), reused 10 (delta 1)</span><br/>
+										<span class="command-green">Unpacking objects: 100% (10/10), done.</span>
+									</span>
+								</div>
 							</li>
 						</ol>
-						<p>Now, you have a local copy of your fork of the Spoon-Knife repository!</p>
+						<p>Now, you have a local copy of your fork of the Your-Repository repository!</p>
 						
-						<h5>Step 3: Configure Git to sync your fork with the original Spoon-Knife repository</h5>
+						<h5>Step 3: Configure Git to sync your fork with the original Your-Repository repository</h5>
 						<p>When you fork a project in order to propose changes to the original repository, you can configure Git to pull changes from the original, or upstream, repository into the local clone of your fork.</p>
 						<ol>
-							<li>On GitHub, navigate to the octocat/Spoon-Knife repository.</li>
+							<li>On GitHub, navigate to the octocat/Your-Repository repository.</li>
 							<li>Under your repository name, click  to copy the clone URL for the repository.</li>
 							<li>Open Git Bash.</li>
 							<li>
@@ -918,38 +922,97 @@
 							</li>
 							<li>
 								Type git remote -v and press Enter. You'll see the current configured remote repository for your fork.
-								<span class="command-black code-sample clearfix">
-									git remote -v<br/>
-									origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)<br/>
-									origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)<br/>
-								</span>
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git remote -v<br/>
+										<span class="command-green">origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)</span><br/>
+										<span class="command-green">origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)<br/>
+									</span>
+								</div>
 							</li>
 							<li>
 								Type git remote add upstream, and then paste the URL you copied in Step 2 and press Enter. It will look like this:
-								<span class="command-black code-sample clearfix">
-									$ git remote add upstream https://github.com/octocat/Spoon-Knife.git
-								</span>
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git remote add upstream https://github.com/SevenWorks/Your-Repository.git
+									</span>
+								</div>
 							</li>
 							<li>
 								To verify the new upstream repository you've specified for your fork, type git remote -v again. You should see the URL for your fork as origin, and the URL for the original repository as upstream.
-								<span class="command-black code-sample clearfix">
-									git remote -v<br/>
-									origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)<br/>
-									origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)<br/>
-									upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)<br/>
-									upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
-								</span>
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git remote -v<br/>
+										<span class="command-green">origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)</span><br/>
+										<span class="command-green">origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)</span><br/>
+										<span class="command-green">upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)</span><br/>
+										<span class="command-green">upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)</span>
+									</span>
+								</div>
 							</li>
 						</ol>
 						<p>Now, you can keep your fork synced with the upstream repository with a few Git commands. For more information, see "Syncing a fork."</p>
 					</section>
 					
-					<section id="wvc">
-						<h2>Sharing of Updates</h2>
-						<p></p>
+					<section id="syncfork">
+						<h2>Syncing a fork</h2>
+						<p>Sync a fork of a repository to keep it up-to-date with the upstream repository.</p>
+						<p>Before you can sync your fork with an upstream repository, you must configure a remote that points to the upstream repository in Git.</p>
+						<ol>
+							<li>Open Git Bash.</li>
+							<li>Change the current working directory to your local project.</li>
+							<li>
+								Fetch the branches and their respective commits from the upstream repository. Commits to master will be stored in a local branch, upstream/master.
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git git fetch upstream<br/>
+										<span class="command-green">remote: Counting objects: 75, done.</span><br/>
+										<span class="command-green">remote: Compressing objects: 100% (53/53), done.</span><br/>
+										<span class="command-green">remote: Total 62 (delta 27), reused 44 (delta 9)</span><br/>
+										<span class="command-green">Unpacking objects: 100% (62/62), done.</span><br/>
+										<span class="command-green">From https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY</span><br/>
+										<span class="command-green">&nbsp;* [new branch]      master     -> upstream/master</span><br/>
+									</span>
+								</div>
+							</li>
+							<li>
+								Check out your fork's local master branch.
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										git checkout master<br/>
+										<span class="command-green">Switched to branch 'master'</span>
+									</span>
+								</div>
+							</li>
+							<li>
+								Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git merge upstream/master<br/>
+										<span class="command-green">Updating a422352..5fdff0f</span><br/>
+										<span class="command-green">Fast-forward<br/></span>
+										<span class="command-green">&nbsp;README                    |    9 -------</span><br/>
+										<span class="command-green">&nbsp;README.md                 |    7 ++++++</span><br/>
+										<span class="command-green">&nbsp;2 files changed, 7 insertions(+), 9 deletions(-)</span><br/>
+										<span class="command-green">&nbsp;delete mode 100644 README<br/></span>
+										<span class="command-green">&nbsp;create mode 100644 README.md</span>
+									</span>
+								</div>
+								If your local branch didn't have any unique commits, Git will instead perform a "fast-forward":
+								<div class="black-area">
+									<span class="command-black code-sample clearfix">
+										$ git merge upstream/master<br/>
+										<span class="command-green">Updating 34e91da..16c56ad</span><br/>
+										<span class="command-green">Fast-forward<br/></span>
+										<span class="command-green">&nbsp;README.md                 |    5 +++--</span><br/>
+										<span class="command-green">&nbsp;1 file changed, 3 insertions(+), 2 deletions(-)</span>
+									</span>
+								</div>
+							</li>
+						</ol>
 					</section>
 					
-					<section id="wvc">
+					<section id="pullreq">
 						<h2>Pull Requests</h2>
 						<p>Pull requests are a feature that makes it easier for developers to collaborate using Github. They provide a user-friendly web interface for discussing proposed changes before integrating them into the official project.</p>
 						<img src="img/guides/pull_request.png" class="img-responsive" />
