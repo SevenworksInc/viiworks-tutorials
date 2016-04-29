@@ -561,8 +561,8 @@ NULL-terminated lists.  An argv-array maintains the invariant that the
 <tt>argv</tt> member always points to a non-NULL array, and that the array is
 always NULL-terminated at the element pointed to by <tt>argv[argc]</tt>. This
 makes the result suitable for passing to functions expecting to receive
-argv from main(), or the <a href="api-run-command.html">run-command API</a>.</p></div>
-<div class="paragraph"><p>The <a href="api-string-list.html">string-list API</a> is similar, but cannot be
+argv from main(), or the <a href="api-run-command">run-command API</a>.</p></div>
+<div class="paragraph"><p>The <a href="api-string-list">string-list API</a> is similar, but cannot be
 used for these purposes; instead of storing a straight string pointer,
 it contains an item structure with a <tt>util</tt> field that is not compatible
 with the traditional argv interface.</p></div>

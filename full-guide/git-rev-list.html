@@ -1061,7 +1061,7 @@ used in the output.  When the starting commit is specified as
 instead.  Under <em>--pretty=oneline</em>, the commit message is
 prefixed with this information on the same line.
 This option cannot be combined with <em>--reverse</em>.
-See also <a href="git-reflog.html">git-reflog(1)</a>.</p></div>
+See also <a href="git-reflog">git-reflog(1)</a>.</p></div>
 </dd>
 <dt class="hdlist1">
 --merge
@@ -1567,7 +1567,7 @@ together.</p></div>
 <p>
         Similar to <em>--objects</em>, but also print the IDs of excluded
         commits prefixed with a "-" character.  This is used by
-        <a href="git-pack-objects.html">git-pack-objects(1)</a> to build "thin" pack, which records
+        <a href="git-pack-objects">git-pack-objects(1)</a> to build "thin" pack, which records
         objects in deltified form based on objects contained in these
         excluded commits to reduce network traffic.
 </p>
@@ -1604,9 +1604,9 @@ together.</p></div>
 </dd>
 </dl></div>
 <h3 id="_commit_formatting">Commit Formatting</h3><div style="clear:left"></div>
-<div class="paragraph"><p>Using these options, <a href="git-rev-list.html">git-rev-list(1)</a> will act similar to the
-more specialized family of commit log tools: <a href="git-log.html">git-log(1)</a>,
-<a href="git-show.html">git-show(1)</a>, and <a href="git-whatchanged.html">git-whatchanged(1)</a></p></div>
+<div class="paragraph"><p>Using these options, <a href="git-rev-list">git-rev-list(1)</a> will act similar to the
+more specialized family of commit log tools: <a href="git-log">git-log(1)</a>,
+<a href="git-show">git-show(1)</a>, and <a href="git-whatchanged">git-whatchanged(1)</a></p></div>
 <div class="dlist"><dl>
 <dt class="hdlist1">
 --pretty[=&lt;format&gt;]
@@ -1623,7 +1623,7 @@ more specialized family of commit log tools: <a href="git-log.html">git-log(1)</
         format.  When omitted, the format defaults to <em>medium</em>.
 </p>
 <div class="paragraph"><p>Note: you can specify the default pretty format in the repository
-configuration (see <a href="git-config.html">git-config(1)</a>).</p></div>
+configuration (see <a href="git-config">git-config(1)</a>).</p></div>
 </dd>
 <dt class="hdlist1">
 --abbrev-commit
@@ -1674,7 +1674,7 @@ people using 80-column terminals.</p></div>
 </dt>
 <dd>
 <p>
-        Show the notes (see <a href="git-notes.html">git-notes(1)</a>) that annotate the
+        Show the notes (see <a href="git-notes">git-notes(1)</a>) that annotate the
         commit, when showing the commit log message.  This is the default
         for <tt>git log</tt>, <tt>git show</tt> and <tt>git whatchanged</tt> commands when
         there is no <tt>--pretty</tt>, <tt>--format</tt> nor <tt>--oneline</tt> option given
@@ -1682,7 +1682,7 @@ people using 80-column terminals.</p></div>
 </p>
 <div class="paragraph"><p>By default, the notes shown are from the notes refs listed in the
 <em>core.notesRef</em> and <em>notes.displayRef</em> variables (or corresponding
-environment overrides). See <a href="git-config.html">git-config(1)</a> for more details.</p></div>
+environment overrides). See <a href="git-config">git-config(1)</a> for more details.</p></div>
 <div class="paragraph"><p>With an optional <em>&lt;ref&gt;</em> argument, show this notes ref instead of the
 default notes ref(s). The ref is taken to be in <tt>refs/notes/</tt> if it
 is not qualified.</p></div>
@@ -1864,7 +1864,7 @@ file.</p></div>
 additional formats by setting a pretty.&lt;name&gt;
 config option to either another format name, or a
 <em>format:</em> string, as described below (see
-<a href="git-config.html">git-config(1)</a>). Here are the details of the
+<a href="git-config">git-config(1)</a>). Here are the details of the
 built-in formats:</p></div>
 <div class="ulist"><ul>
 <li>
@@ -2031,7 +2031,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%aN</em>: author name (respecting .mailmap, see <a href="git-shortlog.html">git-shortlog(1)</a> or <a href="git-blame.html">git-blame(1)</a>)
+<em>%aN</em>: author name (respecting .mailmap, see <a href="git-shortlog">git-shortlog(1)</a> or <a href="git-blame">git-blame(1)</a>)
 </p>
 </li>
 <li>
@@ -2041,7 +2041,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%aE</em>: author email (respecting .mailmap, see <a href="git-shortlog.html">git-shortlog(1)</a> or <a href="git-blame.html">git-blame(1)</a>)
+<em>%aE</em>: author email (respecting .mailmap, see <a href="git-shortlog">git-shortlog(1)</a> or <a href="git-blame">git-blame(1)</a>)
 </p>
 </li>
 <li>
@@ -2076,7 +2076,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%cN</em>: committer name (respecting .mailmap, see <a href="git-shortlog.html">git-shortlog(1)</a> or <a href="git-blame.html">git-blame(1)</a>)
+<em>%cN</em>: committer name (respecting .mailmap, see <a href="git-shortlog">git-shortlog(1)</a> or <a href="git-blame">git-blame(1)</a>)
 </p>
 </li>
 <li>
@@ -2086,7 +2086,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%cE</em>: committer email (respecting .mailmap, see <a href="git-shortlog.html">git-shortlog(1)</a> or <a href="git-blame.html">git-blame(1)</a>)
+<em>%cE</em>: committer email (respecting .mailmap, see <a href="git-shortlog">git-shortlog(1)</a> or <a href="git-blame">git-blame(1)</a>)
 </p>
 </li>
 <li>
@@ -2116,7 +2116,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%d</em>: ref names, like the --decorate option of <a href="git-log.html">git-log(1)</a>
+<em>%d</em>: ref names, like the --decorate option of <a href="git-log">git-log(1)</a>
 </p>
 </li>
 <li>
@@ -2181,7 +2181,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%gN</em>: reflog identity name (respecting .mailmap, see <a href="git-shortlog.html">git-shortlog(1)</a> or <a href="git-blame.html">git-blame(1)</a>)
+<em>%gN</em>: reflog identity name (respecting .mailmap, see <a href="git-shortlog">git-shortlog(1)</a> or <a href="git-blame">git-blame(1)</a>)
 </p>
 </li>
 <li>
@@ -2191,7 +2191,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 </li>
 <li>
 <p>
-<em>%gE</em>: reflog identity email (respecting .mailmap, see <a href="git-shortlog.html">git-shortlog(1)</a> or <a href="git-blame.html">git-blame(1)</a>)
+<em>%gE</em>: reflog identity email (respecting .mailmap, see <a href="git-shortlog">git-shortlog(1)</a> or <a href="git-blame">git-blame(1)</a>)
 </p>
 </li>
 <li>
@@ -2247,7 +2247,7 @@ The title was &gt;&gt;t4119: test autocomputing -p&lt;n&gt; for traditional diff
 <li>
 <p>
 <em>%w([&lt;w&gt;[,&lt;i1&gt;[,&lt;i2&gt;]]])</em>: switch line wrapping, like the -w option of
-  <a href="git-shortlog.html">git-shortlog(1)</a>.
+  <a href="git-shortlog">git-shortlog(1)</a>.
 </p>
 </li>
 </ul></div>
@@ -2311,7 +2311,7 @@ $ git log -2 --pretty=%h 4da45bef</tt></pre>
 </div>
 <h2 id="_git">GIT</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Part of the <a href="git.html">git(1)</a> suite</p></div>
+<div class="paragraph"><p>Part of the <a href="git">git(1)</a> suite</p></div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
